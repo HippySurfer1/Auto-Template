@@ -1,0 +1,14 @@
+﻿[PMC Globals]|None||
+[PMC Code v5.4.1]|F3||1|Window,2,Fast,0,1,Input,-1,-1,1|1|Macro1
+Context=None|
+Groups=Start:1
+1|FileDelete|C:\Format_Dread\Completed_Template.txt|1|0|FileDelete|||||1|
+2|FileRead|Template, C:\Format_Dread\Template.txt|1|0|FileRead|||||2|
+3|[LoopStart]|LoopStart|37|0|Loop|||||3|
+4|FileReadLine|Line, C:\Format_Dread\Template_Questions.txt, %A_Index%|1|0|FileReadLine|||||5|
+5|InputBox|Replace, Fill out the Template, %Line%|1|0|InputBox|||||6|
+6|StrReplace|Template := Template, Line , Replace, 0, Limit:=1|1|0|Function|||||7|
+7|[MsgBox]|%Template%|1|0|MsgBox|0||||8|
+8|[LoopEnd]|LoopEnd|1|0|Loop|||||9|
+09|FileAppend|%Template%, C:\Format_Dread\Completed_Template.txt|1|0|FileAppend|||||10|
+
